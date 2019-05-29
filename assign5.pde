@@ -26,7 +26,7 @@ float soldierSpeed = 2f;
 final int GAME_INIT_TIMER = 7200;
 int gameTimer = GAME_INIT_TIMER;
 
-boolean isHit = false ; 
+boolean isHitten = false ; 
 
 final float CLOCK_BONUS_SECONDS = 15f;
 
@@ -316,7 +316,7 @@ void draw() {
         && clockX[i] < playerX + SOIL_SIZE    // r1 left edge past r2 right
         && clockY[i] + SOIL_SIZE > playerY    // r1 top edge past r2 bottom
         && clockY[i] < playerY + SOIL_SIZE) { // r1 bottom edge past r2 top
-      isHit = true ; 
+      isHitten = true ; 
       addTime();
       clockX[i] = clockY[i] = -1000;
            }
@@ -556,7 +556,7 @@ void drawTimerUI(){
   int time = gameTimer / 60;
   int seconds ; 
   int minnuts = 0;
-	String timeString = str(time); // Requirement #4: Get the mm:ss string using String convertFramesToTimeString(int frames)
+	String timeString = str(time);//? // Requirement #4: Get the mm:ss string using String convertFramesToTimeString(int frames)
   
   if(time >= 60 && time < 120){
   minnuts = 1;
